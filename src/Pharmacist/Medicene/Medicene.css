@@ -1,0 +1,85 @@
+/* Medicene.css */
+
+/* Add general styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation styles (adjust as needed) */
+  /* .navigation {
+     Your navigation styles here
+  } */
+  
+  /* Table styles */
+  .TableContainer {
+    max-width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+  
+  .TableHead {
+    background-color: #f5f5f5;
+  }
+  
+  /* Search input styles */
+  .search {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Table row styles */
+  .TableRow {
+    transition: background-color 0.3s ease;
+  }
+  
+  .TableRow:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Input styles */
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  /* Button styles */
+  .add {
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+  }
+  
+  .add:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid #4caf50;
+  }
+  
+  /* Responsive styles using media queries */
+  @media screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    .TableHead {
+      font-size: 12px;
+    }
+  
+    .TableCell {
+      font-size: 12px;
+    }
+  
+    /* Add more responsive styles as needed */
+  }
+  

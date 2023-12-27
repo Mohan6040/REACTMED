@@ -1,0 +1,27 @@
+.Fcontainer{
+    height: 100vh;
+    width: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ /*  */
+
+.Fpass{
+    height: 7cm;
+    width: 7cm;
+    background-color: aquamarine;
+    margin: 5cm ;
+    padding-left: 20px;
+}
+
+input{
+    border: 2px solid black;
+    margin: 0;
+
+}
+button {
+    height: 1cm;
+    width: 5cm;
+}

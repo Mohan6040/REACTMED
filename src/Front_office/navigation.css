@@ -1,0 +1,26 @@
+.navcontainer{
+    height: 2cm;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navigation{
+    height: 1.5cm;
+    width: 13cm;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+    margin-left: 18cm;
+}
+.p1{
+    margin-left: 30px;
+    font-weight: 500;
+}
+.search{
+    margin-left: 10px;
+    height: 20px;
+    width: 4cm;
+}
