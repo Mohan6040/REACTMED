@@ -1,56 +1,53 @@
-.lcontainer{
-    height: 100vh;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    /* margin-top: 2.5cm; */
+.lcontainer3 {
+  background-image: url("https://www.clinicaltrialsarena.com/wp-content/uploads/sites/22/2023/12/shutterstock_1473017651-1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 100px;
+ /* margin-top: 2.5cm; */
 }
-.ReCAPTCHA{
-margin-top: 10px;
+.ReCAPTCHA {
+  margin-top: 10px;
 }
-.login{
-    height: 14cm;
-    width: 9.5cm;
-    background-color: rgba(77, 227, 222, 0.505);
-    padding-left: 20px;
-    /* padding-top: 10px; */
-    border-radius:10px;
+.login {
+  height: 14cm;
+  width: 9.5cm;
+  background-color: rgba(77, 227, 222, 0.505);
+  box-shadow: 0 0 40px #1beebd;
+  padding-left: 20px;
+  /* padding-top: 10px; */
+  border-radius: 10px;
 }
-input{
-    outline: none;
-    height: 22px;
-    width: 6cm;
-    padding-left: 10px;
-    background: transparent;
-    border: 1px black solid;
+input {
+  outline: none;
+  height: 22px;
+  width: 6cm;
+  padding-left: 10px;
+  background: transparent;
+  border: 1px black solid;
 }
-button{
-    border: none;
-    background-color: rgba(0, 0, 255, 0.695);
-    color: white;
-    
+button {
+  border: none;
+  background-color: rgba(0, 0, 255, 0.695);
+  color: white;
 }
-.div1{
-    height: 2cm;
+.div1 {
+  height: 2cm;
 }
-.fpass{
-    font-size: small;
-    color: rgb(87, 82, 82);
+.fpass {
+  font-size: small;
+  color: rgb(87, 82, 82);
 }
 /* h1{
     margin: auto;
 } */
-.save{
-    width: 6.5cm;
-    margin: 0;
-    margin-top: 1cm;
+.save {
+  width: 6.5cm;
+  margin: 0;
+  margin-top: 1cm;
 }
-.error{
-    margin-top: 1.8cm;
-    margin-left: 1.5cm;
-    color: brown;
-    font-weight: 500;
+.error {
+  margin-top: 1.8cm;
+  margin-left: 1.5cm;
+  color: brown;
+  font-weight: 500;
 }

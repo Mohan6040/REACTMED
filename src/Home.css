@@ -1,17 +1,17 @@
-.container{
+.container {
   margin-top: 1.5cm;
-  height: 14cm;
+  height: 15cm;
   width: 100%;
-  background: blue;
+  background: rgb(224, 147, 32);
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.doctor,.pharmacist,.office-executive,.patient{
+
+.doctor, .pharmacist, .office-executive, .patient {
   height: 8cm;
   width: 7cm;
-  background-color: white;
+  background-color: rgb(55, 235, 241);
   margin: 1cm;
   border-radius: 20px;
   display: flex;
@@ -19,33 +19,46 @@
   align-items: center;
   flex-direction: column;
 }
-.img{
-  height: 3cm;
-  width: 3cm;
-  background-color: aquamarine;
+
+.img {
+  height: 4cm;
+  width: 4cm;
   border-radius: 50%;
+  background-color: aquamarine;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.button{
+
+.button {
   height: 2cm;
   width: 6cm;
-  /* background-color: aquamarine; */
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-button{
+
+button {
   margin: 0.5cm;
   height: 1cm;
   width: 2cm;
   border-radius: 10px;
   border: none;
 }
-.singin{
-  background-color: rgb(38, 220, 13);
+
+.singin, .singup {
   color: white;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
 }
-.singup{
-  background-color: blue;
-  color: white;
+
+.singin {
+  background-color: rgb(220, 148, 13);
+}
+
+.singup {
+  background-color: rgb(220, 148, 13);
 }

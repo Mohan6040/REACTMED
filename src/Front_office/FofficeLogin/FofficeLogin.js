@@ -40,7 +40,7 @@ export const FofficeLogin=()=>{
         if (data.role===userdetails.role) {
             if (data.email===userdetails.email) {
                 if (data.password===userdetails.password) {
-                    navigate("/Apporve")
+                    navigate("/Frontofficehome")
                 //  console.log("login successfully");
                 }else{
                     changeError("INVALID PASSWORD") 
@@ -125,7 +125,7 @@ export const FofficeLogin=()=>{
     
     
     return <>
-        <div  className="lcontainer">
+        <div  className="lcontainer6">
      
         <div className="login">
         <h1>LOGIN</h1>
@@ -135,26 +135,29 @@ export const FofficeLogin=()=>{
             value={email}
             onChange={e=>changeemail(e.target.value)}
             placeholder="Enter value"
-            ></input>
+            ></input><br></br><br></br>
 
             <p >Password</p>
             <input type="Password"
             value={password}
             onChange={e=>changepassword(e.target.value)}
             placeholder="Enter Password"
-            ></input>
+            ></input><br></br><br></br>
             <Link to="/FofficeForgotPassword">
             <p className="fpass">forgot password ?</p>
-            </Link>
+            </Link><br></br>
             <ReCAPTCHA className="ReCAPTCHA" sitekey="6Lf7eyQpAAAAABP44pO0L6bvtrOV5FnLLk1kGIrR" onChange={()=>changeonRecaptchaChange(true)} />
-
+            <br></br>  
             <div className="div1">
                
                <button onClick={login}>Login</button>
-               <Link to="/FofficeRegister"> 
-               <button >Register</button>
+               <br></br><br></br>
+               <p>
+               Don't have an account?{' '}
+               <Link to="/FofficeRegister" style={{ textDecoration: 'underline' }}> 
+               Register
              </Link>
-                
+                </p>
             </div>
         {setError?<p className="error">{setError}</p>:null}
 

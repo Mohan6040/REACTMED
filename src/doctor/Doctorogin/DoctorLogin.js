@@ -36,14 +36,21 @@ export const DoctorLogin=()=>{
         const data={
             email: email,
             password:password,
-            role:"Docter"
+            role:"Doctor"
         }
-         console.log(data.role===role);
+         console.log(data.role===userdetails.role);
+         console.log(userdetails.role,"rr",data.role,"ttt");
          console.log(data.role,"<",userdetails.role,"<");
+         console.log(userdetails.email,"rr",data.email,"ttt");
+         console.log(data.password,"pppp",userdetails.password,"kkk");
         if (data.role===userdetails.role) {
+            console.log(userdetails.role,"rr",data.role,"ttt");
             if (data.email===userdetails.email) {
+                console.log(userdetails.email,"rr",data.email,"ttt");
+                console.log(data.password,"pppp",userdetails.password,"kkk");
                 if (data.password===userdetails.password) {
-                    navigate("/DoctorAppointment")
+
+                    navigate("/Doctorhome")
                 //  console.log("login successfully");
                 }else{
                     changeError("INVALID PASSWORD") 
@@ -79,6 +86,7 @@ export const DoctorLogin=()=>{
         if (onRecaptchaChange) {
             console.log(checkMail(email));
             if (checkMail(email)) {
+                
                 if (password.length>=5) {
                  
                   await  axios.post("http://localhost:1111/officialEmail/",data).then(response => {
@@ -131,7 +139,7 @@ export const DoctorLogin=()=>{
     
     
     return <>
-        <div  className="lcontainer">
+        <div  className="lcontainer4">
      
         <div className="login">
         <h1>LOGIN</h1>
@@ -149,17 +157,24 @@ export const DoctorLogin=()=>{
             onChange={e=>changepassword(e.target.value)}
             placeholder="Enter Password"
             ></input>
+            <br></br><br></br>
             <Link to="/DoctorForgotPassword">
             <p className="fpass">forgot password ?</p>
             </Link>
             <ReCAPTCHA className="ReCAPTCHA" sitekey="6Lf7eyQpAAAAABP44pO0L6bvtrOV5FnLLk1kGIrR" onChange={()=>changeonRecaptchaChange(true)} />
-
+               
+               <br></br>
             <div className="div1">
                
                <button onClick={login}>Login</button>
-               <Link to="/DoctorRegister"> 
-               <button >Register</button>
+        
+               <br></br><br></br>
+               <p>
+               Don't have an account?{' '}
+               <Link to="/DoctorRegister" style={{ textDecoration: 'underline' }}> 
+               Register
              </Link>
+             </p>
                 
             </div>
         {setError?<p className="error">{setError}</p>:null}

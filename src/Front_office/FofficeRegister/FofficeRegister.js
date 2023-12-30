@@ -1,122 +1,132 @@
-import react ,{useState,useEffect}from "react"
-import './FofficeRegister.css'
+import React, { useState, useEffect } from "react";
+import './FofficeRegister.css';
 import ReCAPTCHA from "react-google-recaptcha";
-import axios from 'axios'
+import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 
+export const FofficeRegister = () => {
+    const [email, changeEmail] = useState("");
+    const [name, changeName] = useState("");
+    const [password, changePassword] = useState("");
+    const [age, changeAge] = useState("");
+    const [contact, changeContact] = useState("");
+    const [err, changeErr] = useState("");
+    const [isRecaptchaVerified, changeRecaptchaVerification] = useState(false);
+    const navigate = useNavigate("");
 
-export const FofficeRegister=()=>{
-    // const [page,changepage]=useState("LOGIN")
-    const [email,changeemail]=useState("")
-    const [name,changename]=useState("")
-    const [password,changepassword]=useState("")
-    const [err,changeerr]=useState("")
-    const [onRecaptchaChange,changeonRecaptchaChange]=useState(false)
-    const navigate=useNavigate("")
+    useEffect(() => {
+        console.log(email, "email");
+        console.log(password, "password");
+        console.log(name, "name");
+        console.log(age, "age");
+        console.log(contact, "contact");
+    }, [email, password, name, age, contact]);
 
-    useEffect(()=>{
-        console.log(email,"email");
-        console.log(password,"password");
-        console.log(name,"name");
-    },[email,password,name])
-    
-    const checkMail=(d)=>{
+    const checkMail = (d) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const isValid = emailRegex.test(d);
-        return isValid
-        }
+        return emailRegex.test(d);
+    };
 
-    const save= async()=>{
-        console.log("save");
-        const data ={
-            email:email,
-            name:name,
-            password:password,
-            role:"officeExecutive"
-        }
-        if (onRecaptchaChange) {
-            if (name) {
+    const save = async () => {
+        const data = {
+            email: email,
+            name: name,
+            password: password,
+            age: age,
+            contact: contact,
+            role: "officeExecutive"
+        };
+
+        if (isRecaptchaVerified) {
+            if (name && age && contact) {
                 if (checkMail(email)) {
-                    if (password.length>=5) {
-                
-                      await   axios.post("http://localhost:1111/newofficial",data).then(response => {
-                           console.log(response.data);
-                           navigate("/FofficeLogin")
-                            
-                          })
-                          .catch(error => {
-                            
+                    if (password.length >= 5) {
+                        try {
+                            const response = await axios.post("http://localhost:1111/newofficial", data);
+                            console.log(response.data);
+                            navigate("/FofficeLogin");
+                        } catch (error) {
                             console.error('Error:', error);
-                          });
-                
+                        }
                     } else {
-                        // console.log("enter password atleast 5 character");
-                        changeerr("enter password atleast 5 character") 
-                    setTimeout(hideSpam, 1000);
+                        changeErr("Enter a password of at least 5 characters");
+                        setTimeout(hideError, 1000);
                     }
-                
                 } else {
-                    // console.log("enter email");
-                    changeerr("enter proper email") 
-                    setTimeout(hideSpam, 1000);
+                    changeErr("Enter a valid email");
+                    setTimeout(hideError, 1000);
                 }
             } else {
-                // console.log("enter name");
-                changeerr("enter name") 
-      setTimeout(hideSpam, 1000);
-                
+                changeErr("Enter all required fields");
+                setTimeout(hideError, 1000);
             }
-            
         } else {
-            // console.log("verify captcha");
-            changeerr("VERIFY CAPTCHA") 
-      setTimeout(hideSpam, 1000);
+            changeErr("Verify the CAPTCHA");
+            setTimeout(hideError, 1000);
         }
-    }
+    };
 
-    const hideSpam = () => {
-        changeerr(null) 
+    const hideError = () => {
+        changeErr("");
+    };
 
-      };
+    return (
+        <div className="lcontainer6">
+            <div className="login">
+                <h1>REGISTER</h1>
 
+                <p>Name</p>
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => changeName(e.target.value)}
+                    placeholder="Enter name"
+                /><br/><br/>
 
-    return <>
-        <div  className="lcontainer">
+                <p>Email</p>
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => changeEmail(e.target.value)}
+                    placeholder="Enter email"
+                /><br/><br/>
 
-        <div className="login">
-        <h1>REGISTER</h1>
+                <p>Password</p>
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => changePassword(e.target.value)}
+                    placeholder="Enter password"
+                /><br/><br/>
 
-        <p>Name</p>
-            <input type="email"
-            value={name}
-            onChange={e=>changename(e.target.value)}
-            placeholder="Enter name"></input>
+                <p>Age</p>
+                <input
+                    type="number"
+                    value={age}
+                    onChange={(e) => changeAge(e.target.value)}
+                    placeholder="Enter age"
+                /><br/><br/>
 
-            <p>Email</p>
-            <input type="email"
-            value={email}
-            onChange={e=>changeemail(e.target.value)}
-            placeholder="Enter value"></input>
+                <p>Contact</p>
+                <input
+                    type="text"
+                    value={contact}
+                    onChange={(e) => changeContact(e.target.value)}
+                    placeholder="Enter contact number"
+                /><br/><br/>
 
+                <ReCAPTCHA
+                    className="ReCAPTCHA"
+                    sitekey="6Lf7eyQpAAAAABP44pO0L6bvtrOV5FnLLk1kGIrR"
+                    onChange={() => changeRecaptchaVerification(true)}
+                /><br/><br/>
 
-            <p >Password</p>
-            <input type="Password"
-            value={password}
-            onChange={e=>changepassword(e.target.value)}
-            placeholder="Enter Password"></input>
-            
-            <ReCAPTCHA className="ReCAPTCHA" sitekey="6Lf7eyQpAAAAABP44pO0L6bvtrOV5FnLLk1kGIrR" onChange={()=>changeonRecaptchaChange(true)} />
+                <div className="div1">
+                    <button className="save" onClick={save}>Save the details</button>
+                </div>
 
-            <div className="div1">
-                {/* <Link to="/Doctorlogin"> */}
-                <button className="save" onClick={save}>save the details</button>
-                {/* </Link> */}
-                
+                {err ? <p className="error">{err}</p> : null}
             </div>
-        {err?<p className="error">{err}</p>:null}
         </div>
-    
-    </div>
-    </>
-   
-}
+    );
+};

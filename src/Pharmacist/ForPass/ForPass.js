@@ -55,6 +55,7 @@ export const PharmacistForgotPassword=()=>{
     return(
         <div className="Fcontainer">
             <div className="Fpass">
+            <h2>FORGOT-PASSWORD</h2>
                 <p>Email</p>
                 <input type="email"
             value={email}

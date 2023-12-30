@@ -6,12 +6,13 @@
     justify-content: center;
     align-items: center;
     /* margin: auto; */
-    /* margin-top: 2.5cm; */
+  
 }
 
 .login{
     height: 11cm;
     width: 8cm;
+    margin-bottom: 10%;
     background-color: rgba(77, 227, 222, 0.505);
 }
 input{

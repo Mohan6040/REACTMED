@@ -1,15 +1,14 @@
-.lcontainer{
-    height: 100vh;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    /* margin-top: 2.5cm; */
-}
+/* lcontainer - Background Image */
+.lcontainer6 {
+    background-image: url("https://img.freepik.com/free-photo/clinical-reception-with-waiting-room-facility-lobby-registration-counter-used-patients-with-medical-appointments-empty-reception-desk-health-center-checkup-visits_482257-51247.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1703376000&semt=ais");
+    background-size: cover;
+    background-position: center;
+    padding: 60px;
+    margin-top: -3.5cm;
+  }
+  
 .ReCAPTCHA{
-margin-top: 10px;
+margin-top: 20px;
 }
 .login{
     height: 14cm;

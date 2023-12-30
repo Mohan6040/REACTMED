@@ -1,12 +1,8 @@
 .bcontainer{
-    height: 100vh;
-    width: 100%;
-    /* background-color: rgb(184, 63, 63); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin: auto; */
-    /* margin-top: 2.5cm; */
+    background-image: url("https://img.freepik.com/free-photo/healthcare-workers-preventing-virus-quarantine-campaign-concept-smiling-friendly-female-doctor-nurse-scrubs-writing-dorn-results-analysis-clipboard-standing-white-background_1258-84302.jpg?w=1380&t=st=1703762430~exp=1703763030~hmac=d343c709ed8f173437aa085e1014a3b26a6f0ef86cdf9fb2d384a4b63a7551b2");
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
 }
 
 .login{

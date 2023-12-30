@@ -1,21 +1,52 @@
-import './navigation.css'
-import { Link } from "react-router-dom"
-export const  Navigation = ()=>{
-return <div className="navcontainer">
-    <h1>DOCTOR</h1>
-    <div className="navigation">
-       <Link to="/DoctorAppointment"><p className="p1">APPOINTMENT</p></Link> 
-       <Link to="/DoctorChat">
-        <p className="p1">CHAT</p> 
-       </Link> 
-       <Link to="/DocterMedicene">
-       <p className="p1">MEDICENE</p>
-       </Link> 
-       <Link to="/">
-       <p className="p1">Logout</p>
-       </Link> 
-        
-        {/* <input type="text" placeholder="search" className="search"/> */}
+import React from "react";
+import { Link } from "react-router-dom";
+
+export const Navigation = () => {
+  const navContainerStyle = {
+    backgroundImage: "url('https://example.com/your-image.jpg')", // Replace with your image URL
+    backgroundSize: "cover",
+    backgroundColor: "#14213d", // Blue background color
+    color: "#fff",
+    padding: "15px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  };
+
+  const h1Style = {
+    margin: "10px",
+    fontSize: "34px",
+  };
+
+  const navigationStyle = {
+    display: "flex",
+    gap: "60px", // Add a gap of 20px between navigation links
+    textDecoration: "none", // Remove text decoration for links
+    justifyContent: "center",
+    marginRight: "5%",
+    color: "#fff",
+  };
+
+  return (
+    <div style={navContainerStyle}>
+      <h1 style={h1Style}>DOCTOR</h1>
+      <div style={navigationStyle}>
+        <Link to="/Doctorhome" style={{ textDecoration: "none", color: "#fff" }}>
+          HOME
+        </Link>
+        <Link to="/DoctorChat" style={{ textDecoration: "none", color: "#fff" }}>
+          CHAT
+        </Link>
+        <Link to="/DocterMedicene" style={{ textDecoration: "none", color: "#fff" }}>
+          MEDICINE
+        </Link>
+
+      </div>
+      <Link to="/" style={{ textDecoration: "none", color: "red" }}>
+          LOGOUT
+        </Link>
     </div>
-</div>
-}
+  );
+};
+
+export default Navigation;

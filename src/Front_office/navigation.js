@@ -1,23 +1,59 @@
-import react ,{useState,useEffect}from "react"
-import './navigation.css'
-import { Link,useNavigate } from "react-router-dom";
+import React from "react";
+import "./navigation.css";
+import { Link } from "react-router-dom";
 
-export const  Navigation = ()=>{
-return <div className="navcontainer">
-    <h1>Front office</h1>
-    <div className="navigation">
-        <Link to="/Apporve">
-        <p className="p1">APPROVE</p>
+export const Navigation = () => {
+  const navContainerStyle = {
+    backgroundImage: "url('https://example.com/your-image.jpg')", // Replace with your image URL
+    backgroundSize: "cover",
+    backgroundColor: "black", // Light pink background color
+    color: "#fff",
+    padding: "15px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  };
+
+  const h1Style = {
+    margin: "10px",
+    fontSize: "34px",
+  };
+
+  const navigationStyle = {
+    display: "flex",
+    gap: "10px", // Add a gap of 10px between navigation links
+    textDecoration: "none", // Remove text decoration for links
+    color: "#fff",
+  };
+
+  const logoutLinkStyle = {
+    textDecoration: "none",
+    color: "#fff",
+  };
+
+  return (
+    <div style={navContainerStyle}>
+      <h1 style={h1Style}>Front office</h1>
+      <div style={navigationStyle}>
+        <Link to="/Frontofficehome" style={logoutLinkStyle}>
+          Home
         </Link>
-        <Link to="/Book">
-        <p className="p1">BOOK</p> 
+        <Link to="/Apporve" style={logoutLinkStyle}>
+          Approve
         </Link>
-        <Link to="/ViewAll">
-        <p className="p1">VIEW ALL</p>
+        <Link to="/Book" style={logoutLinkStyle}>
+          Book
         </Link>
-        <Link to="/">
-       <p className="p1">Logout</p>
-       </Link> 
+        <Link to="/ViewAll" style={logoutLinkStyle}>
+          View All
+        </Link>
+       
+        <Link to="/" style={logoutLinkStyle}>
+          Logout
+        </Link>
+      </div>
     </div>
-</div>
-}
+  );
+};
+
+export default Navigation;

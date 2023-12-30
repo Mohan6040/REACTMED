@@ -1,54 +1,77 @@
-.lcontainer{
-    height: 100vh;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    /* margin-top: 2.5cm; */
+/* lcontainer - Background Image */
+.lcontainer4 {
+    background-image: url("https://img.freepik.com/free-photo/close-up-doctor-with-copy-space_23-2148814244.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699660800&semt=ais");
+    background-size: cover;
+    background-position: center;
+    padding: 100px;
 }
-.ReCAPTCHA{
-margin-top: 10px;
+
+/* login-container - Main Container Styling */
+.login-container {
+    padding: 20px;
+    margin-top: 90px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background-color: rgba(231, 24, 24, 0.218);
+    margin-left: 20%;
+    margin-right: 20%;
 }
-.login{
-    height: 14cm;
-    width: 9.5cm;
-    background-color: rgba(77, 227, 222, 0.505);
-    padding-left: 20px;
-    /* padding-top: 10px; */
-    border-radius:10px;
+
+/* ReCAPTCHA - Additional Styling */
+.ReCAPTCHA {
+    margin-top: 10px;
 }
-input{
+
+/* login - Secondary Container Styling */
+.login {
+    padding: 20px;
+    margin-top: 90px;
+    border-radius: 20px;
+    box-shadow: 0 0 60px #fc2121;
+    backdrop-filter: blur(20px);
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/* input - Text Box Styling */
+input {
     outline: none;
-    height: 22px;
+    height: 28px; /* Adjusted height */
     width: 6cm;
     padding-left: 10px;
     background: transparent;
-    border: 1px black solid;
+    border: none; /* Removed border */
+    border-bottom: 1px rgb(238, 13, 13) solid; /* Added bottom border */
+    font-size: medium; /* Changed to medium size */
 }
-button{
+
+/* button - Button Styling */
+button {
     border: none;
-    background-color: rgba(0, 0, 255, 0.695);
+    background-color: rgba(111, 111, 145, 0.695);
     color: white;
-    
 }
-.div1{
-    height: 2cm;
+
+/* div1 - Additional Styling */
+.div1 {
+    height: 5cm;
 }
-.fpass{
-    font-size: small;
+
+/* fpass - Additional Styling */
+.fpass {
+    font-size: x-large;
     color: rgb(87, 82, 82);
 }
-/* h1{
-    margin: auto;
-} */
-.save{
+
+/* save - Additional Styling */
+.save {
     width: 6.5cm;
     margin: 0;
     margin-top: 1cm;
 }
-.error{
+
+/* error - Error Styling */
+.error {
     margin-top: 1.8cm;
     margin-left: 1.5cm;
     color: brown;

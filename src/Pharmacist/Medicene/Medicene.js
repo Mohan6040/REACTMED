@@ -18,9 +18,9 @@ export const  Medicene = ()=>{
 
   const [medicineName,changemedicineName]=useState("")
   const [dossage,changedossage]=useState("")
-  const [gst,changegst]=useState("")
+  const [gst,changegst]=useState(18)
   const [price,changeprice]=useState("")
-  const [discount,changediscount]=useState("")
+  const [discount,changediscount]=useState(10)
 
   const [search,setsearch]=useState("")
 
@@ -48,8 +48,8 @@ export const  Medicene = ()=>{
       dosage:dossage,
 medicineName:medicineName,
 price:price,
-gst:gst,
-discount:discount
+gst:18,
+discount:10
     }
 
   await  axios.post("http://localhost:1111/newMedicine",send).then(response => {
@@ -132,9 +132,9 @@ return <>
             <TableCell align="left">medicineName</TableCell>
             <TableCell align="left">dosage</TableCell>
             <TableCell align="left">price</TableCell>
-            <TableCell align="left">gst</TableCell>
+            <TableCell align="left">GST/TAX</TableCell>
             <TableCell align="left">discount</TableCell>
-            <TableCell align="left">Finalprice</TableCell>
+            <TableCell align="left">Finalprice </TableCell>
             <TableCell align="left">Edit</TableCell>
             <TableCell align="left"><AddIcon onClick={AddMethod}/></TableCell>
         
@@ -172,9 +172,9 @@ return <>
            <TableCell align="left">{row.medicineName}</TableCell>
            <TableCell align="left">{row.dosage}</TableCell>
            <TableCell align="left">{row.price}</TableCell>
-           <TableCell align="left">{row.gst}</TableCell>
-           <TableCell align="left">{row.discount}</TableCell>
-           <TableCell align="left">{row.price+row.gst-row.discount}</TableCell>
+           <TableCell align="left">{row.gst+"%"}</TableCell>
+           <TableCell align="left">{row.discount+"%"}</TableCell>
+           <TableCell align="left">{(row.price+((row.price*row.gst)/100)-((row.price*row.discount)/100))}</TableCell>
            <TableCell align="left">
             <div>
               <EditIcon onClick={()=>Edit(i)}/>
@@ -193,8 +193,8 @@ return <>
            <TableCell align="left"><input type="text" value={medicineName} onChange={e=>changemedicineName(e.target.value)}/></TableCell>
            <TableCell align="left"><input type="text" value={dossage} onChange={e=>changedossage(e.target.value)}/></TableCell>
            <TableCell align="left"><input type="number" value={price} onChange={e=>changeprice(e.target.value)}/></TableCell>
-           <TableCell align="left"><input type="number" value={gst} onChange={e=>changegst(e.target.value)}/></TableCell>
-           <TableCell align="left"><input type="number" value={discount} onChange={e=>changediscount(e.target.value)}/></TableCell>
+           <TableCell align="left">18%</TableCell>
+           <TableCell align="left">10%</TableCell>
            <TableCell align="left">Auto cal</TableCell>
            <TableCell align="left">
             <div className="add" onClick={newMedicine}>
@@ -209,4 +209,3 @@ return <>
   
    
 }
-

@@ -55,19 +55,20 @@ export const FofficeForgotPassword=()=>{
     return(
         <div className="Fcontainer">
             <div className="Fpass">
+                <h2>FORGOT-PASSWORD</h2>
                 <p>Email</p>
                 <input type="email"
             value={email}
             onChange={e=>changeemail(e.target.value)}
             placeholder="Enter value"
-                />
+                /><br></br><br></br>
                 <p>New Password</p>
                 <input
                 type="Password"
                 value={password}
                 onChange={e=>changepassword(e.target.value)}
                 placeholder="Enter Password"
-                />
+                /><br></br><br></br>
                 {/* <Link to="/Doctorlogin"> */}
                 <button onClick={save}>save the details</button>
                 {/* </Link> */}

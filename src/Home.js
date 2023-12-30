@@ -12,7 +12,7 @@ import { FofficeRegister } from "./Front_office/FofficeRegister/FofficeRegister"
 import { FofficeForgotPassword } from "./Front_office/ForPass/ForPass";
 import { Apporve } from "./Front_office/apporve/apporve";
 import { Book } from "./Front_office/Book/book";
-import { ViewAll } from "./Front_office/viewAll/viewAll";
+import { ViewAll } from "./Front_office/viewAll/viewAlldoc";
 import { Medicene } from "./Pharmacist/Medicene/Medicene";
 import { PharmacistForgotPassword } from "./Pharmacist/ForPass/ForPass";
 import { PharmacistRegister } from "./Pharmacist/FofficeRegister/FofficeRegister";
@@ -21,23 +21,41 @@ import { UserLogin } from "./User/Doctorogin/DoctorLogin";
 import { UserRegister } from "./User/DoctorRegister/DoctorRegister";
 import { UserForgotPassword } from "./User/ForPass/ForPass";
 import { UserBook } from "./User/Appointment/book";
-import { Userchat } from "./User/chat/chat";
+import { Userchat } from "./User/Chat/chat";
 import { UserMedicene } from "./User/Medicene/Medicene";
+import Userhome from "./User/Userhome/userhome";
+import DoctorHome from "./doctor/Doctorhome/Doctorhome";
+import Frontofficehome from "./Front_office/Frontofficehome/frontofficehome";
+import Pharmacisthome from "./Pharmacist/Pharmacisthome/pharmacisthome";
+import DoctorList from "./doctor/Doctorlist/doctorlist";
+import Landingpage from "./Landingpage";
+
+
+
+
 
 export const Home =()=>{
 return(<Routes>
 
 <Route path="/"element={<App/>}/>
+<Route path="/home"element={<Landingpage/>}/>
 
 <Route path="/Doctorlogin"element={<DoctorLogin/>}/>
 <Route path="/DoctorRegister"element={<DoctorRegister/>}/>
+
 <Route path="/DoctorAppointment"element={<DoctorAppointment/>}/>
 <Route path="/DocterMedicene"element={<DocterMedicene/>}/>
 <Route path="/DoctorChat"element={<DoctorChat/>}/>
 <Route path="/DoctorForgotPassword"element={<DoctorForgotPassword/>}/>
+<Route path="/Doctorhome" element={<DoctorHome />}/>;
+<Route path="/Doctorlist" element={<DoctorList/>}/>;
+
+
+
 
 <Route path="/FofficeLogin"element={<FofficeLogin/>}/>
 <Route path="/FofficeRegister"element={<FofficeRegister/>}/>
+<Route path="/Frontofficehome"element={<Frontofficehome/>}/>
 <Route path="/FofficeForgotPassword"element={<FofficeForgotPassword/>}/>
 <Route path="/Apporve"element={<Apporve/>}/>
 <Route path="/Book"element={<Book/>}/>
@@ -45,6 +63,7 @@ return(<Routes>
 
 <Route path="/PharmacistForgotPassword"element={<PharmacistForgotPassword/>}/>
 <Route path="/PharmacistRegister"element={<PharmacistRegister/>}/>
+<Route path="/Pharmacisthome"element={<Pharmacisthome/>}/>
 <Route path="/PharmacistLogin"element={<PharmacistLogin/>}/>
 <Route path="/Medicene"element={<Medicene/>}/>
 
@@ -52,10 +71,13 @@ return(<Routes>
 <Route path="/UserRegister"element={<UserRegister/>}/>
 <Route path="/UserLogin"element={<UserLogin/>}/>
 <Route path="/UserBook"element={<UserBook/>}/>
+<Route path="/Userhome"element={<Userhome/>}/>
 <Route path="/Userchat"element={<Userchat/>}/>
 <Route path="/UserMedicene"element={<UserMedicene/>}/>
 
 
 
+
 </Routes>)
 }
+

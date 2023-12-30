@@ -39,7 +39,7 @@ export const PharmacistLogin = () => {
     if (data.role === userdetails.role) {
       if (data.email === userdetails.email) {
         if (data.password === userdetails.password) {
-          navigate("/Medicene");
+          navigate("/Pharmacisthome");
           //  console.log("login successfully");
         } else {
           changeError("INVALID PASSWORD");
@@ -109,7 +109,7 @@ export const PharmacistLogin = () => {
 
   return (
     <>
-      <div className="lcontainer">
+      <div className="lcontainer2">
         <div className="login">
           <h1>LOGIN</h1>
 
@@ -119,7 +119,7 @@ export const PharmacistLogin = () => {
             value={email}
             onChange={(e) => changeemail(e.target.value)}
             placeholder="Enter value"
-          ></input>
+          ></input><br></br><br></br>
 
           <p>Password</p>
           <input
@@ -127,21 +127,24 @@ export const PharmacistLogin = () => {
             value={password}
             onChange={(e) => changepassword(e.target.value)}
             placeholder="Enter Password"
-          ></input>
+          ></input><br></br><br></br>
           <Link to="/PharmacistForgotPassword">
             <p className="fpass">forgot password ?</p>
-          </Link>
+          </Link><br></br>
           <ReCAPTCHA
             className="ReCAPTCHA"
             sitekey="6Lf7eyQpAAAAABP44pO0L6bvtrOV5FnLLk1kGIrR"
             onChange={() => changeonRecaptchaChange(true)}
-          />
+          /><br></br>
 
           <div className="div1">
             <button onClick={login}>Login</button>
-            <Link to="/PharmacistRegister">
-              <button>Register</button>
+            <p><br></br>
+               Don't have an account?{' '}
+            <Link to="/PharmacistRegister" style={{ textDecoration: 'underline' }}>
+             Register
             </Link>
+            </p>
           </div>
           {setError ? <p className="error">{setError}</p> : null}
         </div>
